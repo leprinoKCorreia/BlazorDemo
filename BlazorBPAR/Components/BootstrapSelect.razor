@@ -1,0 +1,35 @@
+﻿@using BlazorBPAR.Services;
+@inject SQLQueryService SQLQueryService
+@inject InputDataService inputData
+
+@if(SelectOptions != null)
+{
+    <div class="selectDiv">
+        <style>
+            .dropdown-toggle {
+                color: rgb(96, 94, 92) !important;
+                font-size: 16px !important;
+                font-family: "Segoe UI", wf_segoe-ui_normal, helvetica, arial, sans-serif !important;
+                padding: 5px 5px 3px 5px !important;
+                margin: 5px 5px 0 5px !important;
+                display: flex;
+                outline: 0 !important;
+                border: 1px solid var(--neutral-light-color,#eaeaea) !important;
+                background-color: rgba(181, 239, 217, 0.97) !important;
+                width: 160px !important;
+                height: 34px;
+            }
+        </style>
+        <label class="selectLabel">@SelectOptions.Label</label>
+        @if (SelectOptions.options != null && SelectOptions.IDName != null)
+        {
+            <select id="@SelectOptions.IDName" class="selectpicker" multiple data-dropup-auto="false" @onchange="(e) => OnDataChange(e,SelectOptions.IDName)">
+                @foreach (var option in SelectOptions.options)
+                {
+                    <option value="@option">@option</option>
+                }
+            </select>
+        }
+    </div>
+}
+

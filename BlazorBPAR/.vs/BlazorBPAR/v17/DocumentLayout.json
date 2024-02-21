@@ -1,0 +1,265 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|c:\\users\\correika\\source\\repos\\blazorbpar\\components\\bootstrapselect.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|solutionrelative:components\\bootstrapselect.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|c:\\users\\correika\\source\\repos\\blazorbpar\\components\\bootstrapselectlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|solutionrelative:components\\bootstrapselectlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|c:\\users\\correika\\source\\repos\\blazorbpar\\pages\\index.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|solutionrelative:pages\\index.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|c:\\users\\correika\\source\\repos\\blazorbpar\\components\\bootstrapselect.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|solutionrelative:components\\bootstrapselect.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|c:\\users\\correika\\source\\repos\\blazorbpar\\components\\bootstrapselectlist.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|solutionrelative:components\\bootstrapselectlist.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|c:\\users\\correika\\source\\repos\\blazorbpar\\objects\\selectoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|solutionrelative:objects\\selectoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|c:\\users\\correika\\source\\repos\\blazorbpar\\pages\\bpar_pages\\vatcookcurves.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|solutionrelative:pages\\bpar_pages\\vatcookcurves.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|c:\\users\\correika\\source\\repos\\blazorbpar\\services\\inputdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|solutionrelative:services\\inputdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|c:\\users\\correika\\source\\repos\\blazorbpar\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|solutionrelative:pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|c:\\users\\correika\\source\\repos\\blazorbpar\\pages\\_host.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|solutionrelative:pages\\_host.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|c:\\users\\correika\\source\\repos\\blazorbpar\\pages\\bpar_pages\\binoffweeklyreport.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|solutionrelative:pages\\bpar_pages\\binoffweeklyreport.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|c:\\users\\correika\\source\\repos\\blazorbpar\\pages\\bpar_pages\\vatcookcurves.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|solutionrelative:pages\\bpar_pages\\vatcookcurves.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|c:\\users\\correika\\source\\repos\\blazorbpar\\pages\\bpar_pages\\vatcookcurves.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|solutionrelative:pages\\bpar_pages\\vatcookcurves.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|c:\\users\\correika\\source\\repos\\blazorbpar\\pages\\bpar_pages\\binoffweeklyreport.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|solutionrelative:pages\\bpar_pages\\binoffweeklyreport.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|c:\\users\\correika\\source\\repos\\blazorbpar\\pages\\bpar_pages\\binoffweeklyreport.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E728F298-6800-4FE3-BDA6-5F62D756A513}|BlazorBPAR.csproj|solutionrelative:pages\\bpar_pages\\binoffweeklyreport.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 215,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_Host.cshtml",
+              "DocumentMoniker": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\_Host.cshtml",
+              "RelativeDocumentMoniker": "Pages\\_Host.cshtml",
+              "ToolTip": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\_Host.cshtml",
+              "RelativeToolTip": "Pages\\_Host.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAEAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-20T23:37:43.307Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.razor.cs",
+              "DocumentMoniker": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\Index.razor.cs",
+              "RelativeDocumentMoniker": "Pages\\Index.razor.cs",
+              "ToolTip": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\Index.razor.cs",
+              "RelativeToolTip": "Pages\\Index.razor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T23:30:02.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.razor",
+              "DocumentMoniker": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\Index.razor",
+              "RelativeDocumentMoniker": "Pages\\Index.razor",
+              "ToolTip": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\Index.razor",
+              "RelativeToolTip": "Pages\\Index.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-20T23:29:55.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BootstrapSelectList.razor.cs",
+              "DocumentMoniker": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Components\\BootstrapSelectList.razor.cs",
+              "RelativeDocumentMoniker": "Components\\BootstrapSelectList.razor.cs",
+              "ToolTip": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Components\\BootstrapSelectList.razor.cs",
+              "RelativeToolTip": "Components\\BootstrapSelectList.razor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T22:02:40.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BootstrapSelectList.razor",
+              "DocumentMoniker": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Components\\BootstrapSelectList.razor",
+              "RelativeDocumentMoniker": "Components\\BootstrapSelectList.razor",
+              "ToolTip": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Components\\BootstrapSelectList.razor",
+              "RelativeToolTip": "Components\\BootstrapSelectList.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-20T22:01:21.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SelectOptions.cs",
+              "DocumentMoniker": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Objects\\SelectOptions.cs",
+              "RelativeDocumentMoniker": "Objects\\SelectOptions.cs",
+              "ToolTip": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Objects\\SelectOptions.cs",
+              "RelativeToolTip": "Objects\\SelectOptions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T21:56:46.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BootstrapSelect.razor.cs",
+              "DocumentMoniker": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Components\\BootstrapSelect.razor.cs",
+              "RelativeDocumentMoniker": "Components\\BootstrapSelect.razor.cs",
+              "ToolTip": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Components\\BootstrapSelect.razor.cs",
+              "RelativeToolTip": "Components\\BootstrapSelect.razor.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAQwEcAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T21:47:38.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BootstrapSelect.razor",
+              "DocumentMoniker": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Components\\BootstrapSelect.razor",
+              "RelativeDocumentMoniker": "Components\\BootstrapSelect.razor",
+              "ToolTip": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Components\\BootstrapSelect.razor",
+              "RelativeToolTip": "Components\\BootstrapSelect.razor",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAwAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-20T21:47:36.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "InputDataService.cs",
+              "DocumentMoniker": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Services\\InputDataService.cs",
+              "RelativeDocumentMoniker": "Services\\InputDataService.cs",
+              "ToolTip": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Services\\InputDataService.cs",
+              "RelativeToolTip": "Services\\InputDataService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T19:50:07.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "VatCookCurves.razor.css",
+              "DocumentMoniker": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\BPAR_Pages\\VatCookCurves.razor.css",
+              "RelativeDocumentMoniker": "Pages\\BPAR_Pages\\VatCookCurves.razor.css",
+              "ToolTip": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\BPAR_Pages\\VatCookCurves.razor.css",
+              "RelativeToolTip": "Pages\\BPAR_Pages\\VatCookCurves.razor.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-02-19T19:46:26.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "VatCookCurves.razor.cs",
+              "DocumentMoniker": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\BPAR_Pages\\VatCookCurves.razor.cs",
+              "RelativeDocumentMoniker": "Pages\\BPAR_Pages\\VatCookCurves.razor.cs",
+              "ToolTip": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\BPAR_Pages\\VatCookCurves.razor.cs",
+              "RelativeToolTip": "Pages\\BPAR_Pages\\VatCookCurves.razor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEAAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T19:46:26.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "VatCookCurves.razor",
+              "DocumentMoniker": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\BPAR_Pages\\VatCookCurves.razor",
+              "RelativeDocumentMoniker": "Pages\\BPAR_Pages\\VatCookCurves.razor",
+              "ToolTip": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\BPAR_Pages\\VatCookCurves.razor",
+              "RelativeToolTip": "Pages\\BPAR_Pages\\VatCookCurves.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-19T19:46:25.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BinoffWeeklyReport.razor.css",
+              "DocumentMoniker": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\BPAR_Pages\\BinoffWeeklyReport.razor.css",
+              "RelativeDocumentMoniker": "Pages\\BPAR_Pages\\BinoffWeeklyReport.razor.css",
+              "ToolTip": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\BPAR_Pages\\BinoffWeeklyReport.razor.css",
+              "RelativeToolTip": "Pages\\BPAR_Pages\\BinoffWeeklyReport.razor.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-02-19T19:46:23.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BinoffWeeklyReport.razor.cs",
+              "DocumentMoniker": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\BPAR_Pages\\BinoffWeeklyReport.razor.cs",
+              "RelativeDocumentMoniker": "Pages\\BPAR_Pages\\BinoffWeeklyReport.razor.cs",
+              "ToolTip": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\BPAR_Pages\\BinoffWeeklyReport.razor.cs",
+              "RelativeToolTip": "Pages\\BPAR_Pages\\BinoffWeeklyReport.razor.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAADAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T19:46:22.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BinoffWeeklyReport.razor",
+              "DocumentMoniker": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\BPAR_Pages\\BinoffWeeklyReport.razor",
+              "RelativeDocumentMoniker": "Pages\\BPAR_Pages\\BinoffWeeklyReport.razor",
+              "ToolTip": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\Pages\\BPAR_Pages\\BinoffWeeklyReport.razor",
+              "RelativeToolTip": "Pages\\BPAR_Pages\\BinoffWeeklyReport.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-19T19:46:21.855Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

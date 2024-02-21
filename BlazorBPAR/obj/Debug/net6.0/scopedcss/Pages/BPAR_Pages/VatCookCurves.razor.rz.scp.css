@@ -1,0 +1,22 @@
+
+.vatCookCurveButton[b-67taen4oiq] {
+    background-color: rgba(94, 203, 200, 0.97);
+    height: 40px;
+    width: 183px;
+    font-family: 'Segoe UI',wf_segoe-ui_normal,helvetica,arial,sans-serif;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    -webkit-box-orient: vertical;
+}
+
+.vatCookCurveMainMenuButton[b-67taen4oiq] {
+    height: 44px;
+    background-color: rgba(102,75,172,255);
+    fill-opacity: 0.5;
+    stroke: rgb(96, 94, 92);
+    stroke-width: 6;
+    stroke-opacity: 1;
+    font-size: 16px;
+    font-family: 'Segoe UI',wf_segoe-ui_normal,helvetica,arial,sans-serif;
+}

@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Components
+
+<div style="width:100%; height:60px;">
+    <center>
+        <h2 id="Report + @title" style="text-align:center; font-size:26px; ">@title</h2>
+    </center>
+</div>
+
+@code {
+    [Parameter]
+    public string? title { get; set; } 
+}

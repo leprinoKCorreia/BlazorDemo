@@ -1,0 +1,25 @@
+﻿.selectDiv {
+    width: 183px;
+    height: 64px;
+    border: 1px solid rgb(0,0,0);
+    padding: 0px;
+    border-radius: 0px;
+    box-sizing: border-box;
+    background-color: rgba(181, 239, 217, 0.97);
+}
+
+.selectLabel {
+    font-size: 16px;
+    font-family: wf_standard-font, helvetica, arial, sans-serif;
+    color: rgb(37, 36, 35);
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    width: auto;
+    margin: 0px 10px 0px 15px;
+    -webkit-flex: 1 1 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+ 

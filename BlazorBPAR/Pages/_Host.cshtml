@@ -1,0 +1,68 @@
+﻿@page "/"
+@namespace BlazorBPAR.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Layout";
+}
+
+<component type="typeof(App)" render-mode="ServerPrerendered" />
+
+<script src="~/lib/jquery/jquery.js" type="text/javascript"></script>
+<script src="~/lib/popper.js/umd/popper.js" type="text/javascript"></script>
+<script src="~/lib/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+<script src="~/lib/bootstrap-select/js/bootstrap-select.js" type="text/javascript"></script>
+<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+
+
+
+<script>
+    window.selectPickerService = {
+        init: () => {
+            $('.selectpicker').selectpicker();
+        }
+    }
+</script>
+
+<script>
+    window.loadGraphService = {
+        loadLineGraph: async (graph, data, columns, chart_options) => {
+
+            data = JSON.parse(data);
+            columns = JSON.parse(columns);
+            chart_options = JSON.parse(chart_options);
+
+            await google.charts.load('current', { packages: ['corechart'] });
+
+            var chart_data = {
+                "cols": columns,
+                rows: []
+            };
+
+            // parse data
+            for (var i = 0; i < data.length; i++) {
+                var row = [];
+
+                for (var j = 0; j < columns.length; j++) {
+                    if (columns[j]["type"] == "datetime") {
+                        row.push({ v: new Date(data[i][columns[j]["label"]]) });
+                    } else {
+                        row.push({ v: data[i][columns[j]["label"]] });
+                    }
+                }
+                chart_data.rows.push({ c: row });
+            }
+
+            var chart_data = new google.visualization.DataTable(chart_data);
+
+            // create chart
+            var chart = new google.visualization.LineChart(document.getElementById(graph));
+            chart.draw(chart_data, chart_options);
+                        
+        }
+    }
+</script>
+
+
+
+
+

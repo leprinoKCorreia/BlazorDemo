@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Http;
 using Microsoft.JSInterop;
 using System;
+using System.ComponentModel;
 using System.ComponentModel.Design;
 
 namespace BlazorBPAR.Components
@@ -18,6 +19,7 @@ namespace BlazorBPAR.Components
         [Inject] public IJSRuntime? JSRuntime { get; set; }
 
         public IList<Dictionary<string, object>>? queryResults;
+        bool isntFirstRun = false;
 
         protected override async Task OnInitializedAsync()
         {
@@ -25,7 +27,7 @@ namespace BlazorBPAR.Components
             PopulateDropdown();
         }
 
-        public async Task PopulateDropdown()
+        public async void PopulateDropdown()
         {
             if (SelectOptions != null)
             {
@@ -62,16 +64,29 @@ namespace BlazorBPAR.Components
                             SelectOptions.options.Add((string)result["Option"]);
                         }
 
-                        if(JSRuntime != null)
-                        {
-                            string js = "$('#" + SelectOptions.IDName + "').selectpicker('refresh');";
-                            await JSRuntime.InvokeVoidAsync("eval",js);
-                        }
-
+                        StateHasChanged();
+                        
+                        refreshDropdown();
                     }
                 }
             }
         }
+
+        public async void refreshDropdown()
+        {
+            if (JSRuntime != null && isntFirstRun && SelectOptions != null)
+            {
+                await Task.Delay(1); // DO NOT EVER MOVE THIS. I DONT KNOW WHY BUT THIS WONT WORK UNLESS WE DELAY A MILISECOND
+                string js = "$('#" + SelectOptions.IDName + "').selectpicker('refresh');";
+                Console.WriteLine(js);
+                await JSRuntime.InvokeVoidAsync("eval", js);
+                await Task.Delay(1); // DO NOT EVER MOVE THIS. I DONT KNOW WHY BUT THIS WONT WORK UNLESS WE DELAY A MILISECOND
+                js = "$('#" + SelectOptions.IDName + "').selectpicker('selectAll');";
+                Console.WriteLine(js);
+                await JSRuntime.InvokeVoidAsync("eval", js);
+            }
+        }
+
 
         private async Task OnDataChange(ChangeEventArgs e, string key)
         {
@@ -80,30 +95,23 @@ namespace BlazorBPAR.Components
             {
                 string SelectVal = string.Join(",", values);
                 inputData.SetValue(key, value: SelectVal);
-            }       
-            if(SelectOptions != null && SelectOptions.dependencies != null && bootstrapSelects != null)
-            {
-                foreach(var dependency in SelectOptions.dependencies)
+                
+                if (SelectOptions != null && SelectOptions.dependencies != null && bootstrapSelects != null)
                 {
-                    foreach (var select in bootstrapSelects)
+                    foreach (var dependency in SelectOptions.dependencies)
                     {
-                        if(select.SelectOptions != null && dependency == select.SelectOptions.IDName)
+                        foreach (var select in bootstrapSelects)
                         {
-                            select.SelectOptions.options = new List<string>();
-                            await select.PopulateDropdown();                            
+                            if (select.SelectOptions != null && dependency == select.SelectOptions.IDName)
+                            {
+                                select.SelectOptions.options = new List<string>();
+                                select.isntFirstRun = true;
+                                select.PopulateDropdown();
+                            }
                         }
                     }
-                }                
-            }
-        }
-
-
-        protected override async Task OnAfterRenderAsync(bool firstRender)
-        {
-            if (firstRender && JSRuntime != null) // only needs to be called once per page render
-            {
-                await JSRuntime.InvokeVoidAsync("selectPickerService.init");
-            }
+                }
+            }               
         }
     }
 }

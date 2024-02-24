@@ -3225,19 +3225,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\correika\\.nuget\\packages\\": {}
+    "C:\\Users\\correika\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\BlazorBPAR.csproj",
+      "projectUniqueName": "C:\\Users\\correika\\source\\repos\\BlazorDemo\\BlazorBPAR\\BlazorBPAR.csproj",
       "projectName": "BlazorBPAR",
-      "projectPath": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\BlazorBPAR.csproj",
+      "projectPath": "C:\\Users\\correika\\source\\repos\\BlazorDemo\\BlazorBPAR\\BlazorBPAR.csproj",
       "packagesPath": "C:\\Users\\correika\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\obj\\",
+      "outputPath": "C:\\Users\\correika\\source\\repos\\BlazorDemo\\BlazorBPAR\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\correika\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

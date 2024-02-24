@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zmDetvvVETZS52k7d/0lCfGGQwOAD6aHDKq6U30FKnL3gejcZB8kaaJ9iNLVLwlxjh+5cAc0cH0pSFKEEpnrHg==",
+  "dgSpecHash": "iTOjK8hW47Xg7T3XU5q8H/j2B8ZVQXoc5bYGGf5NJTCTbxdAwSZQ/lMyQ39oMyL5murdmB981MZURgSJOFlgIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\correika\\source\\repos\\BlazorBPAR\\BlazorBPAR.csproj",
+  "projectFilePath": "C:\\Users\\correika\\source\\repos\\BlazorDemo\\BlazorBPAR\\BlazorBPAR.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\correika\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\correika\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

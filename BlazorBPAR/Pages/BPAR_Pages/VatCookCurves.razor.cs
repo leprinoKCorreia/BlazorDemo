@@ -26,7 +26,7 @@ namespace BlazorBPAR.Pages.BPAR_Pages
         {
             PlantSelect = new SelectOptions()
             {
-                options = new List<string>() { "All", "Allendale","Fort Morgan", "Greeley", "Lemoore East", "Lemoore West", "Roswell", "Tracy", "Waverly" },
+                options = new List<string>() { "Allendale","Fort Morgan", "Greeley", "Lemoore East", "Lemoore West", "Roswell", "Tracy", "Waverly" },
                 IDName = "PlantOptions",
                 useQuery = false,
                 Label = "Plant"
@@ -86,6 +86,8 @@ namespace BlazorBPAR.Pages.BPAR_Pages
                 await JSRuntime.InvokeVoidAsync("selectPickerService.init");
             }
         }
+
+        
 
     }
 }

@@ -2,7 +2,7 @@
 @inject SQLQueryService SQLQueryService
 @inject InputDataService inputData
 
-@if(SelectOptions != null)
+@if (SelectOptions != null)
 {
     <div class="selectDiv">
         <style>
@@ -23,7 +23,7 @@
         <label class="selectLabel">@SelectOptions.Label</label>
         @if (SelectOptions.options != null && SelectOptions.IDName != null)
         {
-            <select id="@SelectOptions.IDName" class="selectpicker" multiple data-dropup-auto="false" @onchange="(e) => OnDataChange(e,SelectOptions.IDName)">
+            <select id="@SelectOptions.IDName" class="selectpicker" data-max-options="@returnFalseIfNull(SelectOptions.dataMaxOptions)" multiple data-dropup-auto="false" @onchange="(e) => OnDataChange(e,SelectOptions.IDName)">
                 @foreach (var option in SelectOptions.options)
                 {
                     <option value="@option">@option</option>

@@ -74,7 +74,7 @@ namespace BlazorBPAR.Components
 
         public async void refreshDropdown()
         {
-            if (JSRuntime != null && isntFirstRun && SelectOptions != null)
+            if (JSRuntime != null && SelectOptions != null)
             {
                 await Task.Delay(1); // DO NOT EVER MOVE THIS. I DONT KNOW WHY BUT THIS WONT WORK UNLESS WE DELAY A MILISECOND
                 string js = "$('#" + SelectOptions.IDName + "').selectpicker('refresh');";
@@ -86,7 +86,6 @@ namespace BlazorBPAR.Components
                 await JSRuntime.InvokeVoidAsync("eval", js);
             }
         }
-
 
         private async Task OnDataChange(ChangeEventArgs e, string key)
         {
@@ -112,6 +111,11 @@ namespace BlazorBPAR.Components
                     }
                 }
             }               
+        }
+
+        public string returnFalseIfNull(int? value)
+        {
+            return value.HasValue ? value.Value.ToString() : "false";
         }
     }
 }

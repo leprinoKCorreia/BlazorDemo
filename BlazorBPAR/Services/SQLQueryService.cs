@@ -22,16 +22,22 @@ namespace BlazorBPAR.Services
             DataSet dsrpt = new DataSet();
             using (SqlConnection LITConnnect = new SqlConnection(connection))
             {
-                LITConnnect.Open();
-                SqlCommand sqlComm = new SqlCommand(query, LITConnnect);
-                sqlComm.CommandType = CommandType.Text;
-                sqlComm.CommandTimeout = 0;
-                //sqlComm.ExecuteNonQuery();
-                SqlDataAdapter daa = new SqlDataAdapter();
-                daa.SelectCommand = sqlComm;
-                daa.Fill(dsrpt, "DataSetFromCustomQuery");
-                LITConnnect.Close();
-                LITConnnect.Dispose();
+                try
+                {
+                    LITConnnect.Open();
+                    SqlCommand sqlComm = new SqlCommand(query, LITConnnect);
+                    sqlComm.CommandType = CommandType.Text;
+                    sqlComm.CommandTimeout = 0;
+                    //sqlComm.ExecuteNonQuery();
+                    SqlDataAdapter daa = new SqlDataAdapter();
+                    daa.SelectCommand = sqlComm;
+                    daa.Fill(dsrpt, "DataSetFromCustomQuery");
+                    LITConnnect.Close();
+                    LITConnnect.Dispose();
+                } catch (Exception ex)
+                {
+
+                }
             }
 
             return ConvertDataSetToList(dsrpt);

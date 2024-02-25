@@ -20,7 +20,7 @@ namespace BlazorBPAR.Pages.BPAR_Pages
         private SelectOptions? DateSelect;
         private SelectOptions? ProductCodeSelect;
         private List<SelectOptions>? selectList;
-
+        private List<GraphOptions>? graphOptions;
 
         protected override void OnInitialized()
         {
@@ -59,15 +59,16 @@ namespace BlazorBPAR.Pages.BPAR_Pages
             DateSelect = new SelectOptions()
             {
                 useQuery = false,
-                options = new List<string>() { "02/16/2024" },
+                options = new List<string>() { "02/16/2024", "02/17/2024" },
                 IDName = "DateOptions",
                 Label = "Date",
-                dependencies = new List<string>() { "ProductCodeOptions" }
+                dependencies = new List<string>() { "ProductCodeOptions" },
+                dataMaxOptions = 1,
+                defaultValue = "02/16/2024"
             };
 
             ProductCodeSelect = new SelectOptions()
             {
-                useQuery = true,
                 query = "select distinct ProductCode as [Option] from LEW.BIReports.dbo.r_VatCookCurveTemps where ProductionDate = '$DateOptions$'",
                 connection = config.GetConnectionString("DEN_2012"),
                 IDName = "ProductCodeOptions",

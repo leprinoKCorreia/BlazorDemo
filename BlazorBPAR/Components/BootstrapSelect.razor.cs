@@ -19,7 +19,7 @@ namespace BlazorBPAR.Components
         [Inject] public IJSRuntime? JSRuntime { get; set; }
 
         public IList<Dictionary<string, object>>? queryResults;
-        bool isntFirstRun = false;
+        public bool isntFirstRun = false;
 
         protected override async Task OnInitializedAsync()
         {
@@ -74,16 +74,15 @@ namespace BlazorBPAR.Components
 
         public async void refreshDropdown()
         {
-            if (JSRuntime != null && SelectOptions != null)
+            if (JSRuntime != null && isntFirstRun && SelectOptions != null)
             {
                 await Task.Delay(1); // DO NOT EVER MOVE THIS. I DONT KNOW WHY BUT THIS WONT WORK UNLESS WE DELAY A MILISECOND
                 string js = "$('#" + SelectOptions.IDName + "').selectpicker('refresh');";
-                Console.WriteLine(js);
                 await JSRuntime.InvokeVoidAsync("eval", js);
                 await Task.Delay(1); // DO NOT EVER MOVE THIS. I DONT KNOW WHY BUT THIS WONT WORK UNLESS WE DELAY A MILISECOND
                 js = "$('#" + SelectOptions.IDName + "').selectpicker('selectAll');";
-                Console.WriteLine(js);
                 await JSRuntime.InvokeVoidAsync("eval", js);
+                isntFirstRun = false;
             }
         }
 
@@ -117,5 +116,6 @@ namespace BlazorBPAR.Components
         {
             return value.HasValue ? value.Value.ToString() : "false";
         }
+
     }
 }

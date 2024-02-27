@@ -21,13 +21,13 @@
             </div>
         </div>
         <div style="float:right;width:100%">
-            <BootstrapSelectList selectOptions="@selectList" />
+            <BootstrapSelectList selectOptions="@selectList" @ref="refList" />
         </div>
     </div>
     <div class="rightDIVBPAR">
         <BPARTitle title="Vat Cook Curves" />
         <div id="Graphs" class="graphHolderBPAR">
-            @* <DynamicGraph /> *@
+            <DynamicGraph GraphOptions="@graph1" @ref="graph1Comp" />
         </div>
     </div>
 </div>

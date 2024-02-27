@@ -13,6 +13,9 @@
         public List<cols>? Columns { get; set; }
 
         public graphSettings? GraphSettings { get; set; }
+
+        public List<string>? queryParams { get; set; }
+
     }
 
     public class cols

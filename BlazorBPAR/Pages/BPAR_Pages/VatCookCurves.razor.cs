@@ -91,7 +91,7 @@ namespace BlazorBPAR.Pages.BPAR_Pages
             {
                 Query = "EXEC LIT.dbo._usp_VatCookCurvesAllPlants_dw @CookProgram = null, @PhysicalVat = 1, @Line = 1, @Date = '$DateOptions$', @ProductCode = null, @Plant = 'GRE'",
                 Connection = config.GetConnectionString("DEN_2012"),
-                queryParams = new List<string>{ "DateOptions" },
+                queryParams = new List<string> { "DateOptions" },
                 GraphType = "LineChart",
                 GraphElement = "demoGraph",
                 GraphSettings = new graphSettings()
@@ -109,13 +109,21 @@ namespace BlazorBPAR.Pages.BPAR_Pages
                 await JSRuntime.InvokeVoidAsync("selectPickerService.init");
 
                 await refList.initDefaultValues();
-                if(graph1Comp != null)
-                {
-                    graph1Comp.runGraph();
-                }                
+
+                //if (graph1Comp != null)
+                //{
+                //    graph1Comp.runGraph();
+                //}
             }
         }
 
+        public void runGraph()
+        {
+            if (graph1Comp != null)
+            {
+                graph1Comp.runGraph();
+            }
+        }
         
 
     }

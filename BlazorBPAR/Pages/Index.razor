@@ -1,10 +1,14 @@
 ﻿@page "/"
 @using BlazorBPAR.Components
+@using BlazorBPAR.Services
 @inject NavigationManager nav
 @inject IJSRuntime JS
+@inject SQLQueryService SQLQueryService
+@inject IConfiguration config
 
 <button @onclick='() => openPage("/BinoffWeeklyReport")'>Binoff Weekly Report</button>
 <button @onclick='() => openPage("/VatCookCurves")'>Vat Cook Curves</button>
 
 
 
+<DynamicTable data="@queryResults" />

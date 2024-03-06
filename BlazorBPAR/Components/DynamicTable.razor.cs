@@ -9,7 +9,7 @@ namespace BlazorBPAR.Components
         [Parameter]
         public IEnumerable<IDictionary<string, object>>? data { get; set; }
         [Parameter]
-        public string TableCssClass { get; set; } = string.Empty;
+        //public string TableCssClass { get; set; } = string.Empty;
 
 
         // other important features
@@ -19,7 +19,7 @@ namespace BlazorBPAR.Components
         protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
-            if (data != null)
+            if (data != null && data.Any())
             {
                 columns = GetColumnTypes(data.First());
             }

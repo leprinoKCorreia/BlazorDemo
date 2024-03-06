@@ -2,8 +2,12 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs
+.vs/
 
-**/obj/
+obj/
 
-**/bin/
+bin/
+
+BlazorBPAR/.vs/
+
+BlazorBPAR/bin/Debug/net6.0/

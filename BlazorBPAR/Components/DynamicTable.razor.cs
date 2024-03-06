@@ -9,7 +9,7 @@ namespace BlazorBPAR.Components
         [Parameter]
         public IEnumerable<IDictionary<string, object>>? data { get; set; }
         [Parameter]
-        //public string TableCssClass { get; set; } = string.Empty;
+        public string TableCssClass { get; set; } = string.Empty;
 
 
         // other important features

@@ -1,17 +1,28 @@
 ﻿@if (data != null && columns != null)
 {
-        <RadzenDataGrid @bind-Value=@selectedItems Data="@data" AllowVirtualization="true" AllowColumnResize="true" AllowPaging="false" TItem="IDictionary<string, object>"
-                    AllowFiltering="true" FilterPopupRenderMode="PopupRenderMode.OnDemand" FilterMode="FilterMode.Advanced" AllowSorting="true" AllowMultiColumnSorting="true" ShowMultiColumnSortingIndex="true" Style="height:400px;">
-            <Columns>
-                @foreach (var column in columns)
-                {
-                    <RadzenDataGridColumn TItem="IDictionary<string, object>" Title="@column.Key" Type="column.Value"
-                                          Property="@GetColumnPropertyExpression(column.Key, column.Value)">
-                        <Template>
-                            @context[@column.Key]
-                        </Template>
-                    </RadzenDataGridColumn>
-                }
-            </Columns>
-        </RadzenDataGrid>
+    <RadzenDataGrid @bind-Value=@selectedItems
+                    Data="@data"
+                    AllowVirtualization="true"
+                    AllowColumnResize="true"
+                    AllowPaging="false"
+                    TItem="IDictionary<string, object>"
+                    AllowFiltering="true"
+                    FilterPopupRenderMode="PopupRenderMode.OnDemand"
+                    FilterMode="FilterMode.Advanced"
+                    AllowSorting="true"
+                    AllowMultiColumnSorting="true"
+                    ShowMultiColumnSortingIndex="true"
+                    Style="height:400px;">
+        <Columns>
+            @foreach (var column in columns)
+            {
+                <RadzenDataGridColumn TItem="IDictionary<string, object>" Title="@column.Key" Type="column.Value"
+                                      Property="@GetColumnPropertyExpression(column.Key, column.Value)">
+                    <Template>
+                        @context[@column.Key]
+                    </Template>
+                </RadzenDataGridColumn>
+            }
+        </Columns>
+    </RadzenDataGrid>
 }

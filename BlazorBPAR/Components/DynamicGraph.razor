@@ -7,6 +7,6 @@
 <div id="GraphHolder" style="height: 70%; width: 100%; float:left;">
     @if(GraphOptions != null && GraphOptions.GraphElement != null)
     {
-        <div google-chart="@GraphOptions.GraphElement" style="width:100%; height:100%;" id="@GraphOptions.GraphElement" />
+        <div google-chart="@GraphOptions.GraphElement" style="width: @GraphOptions.Width; height: @GraphOptions.Height; float:left" id="@GraphOptions.GraphElement" />
     }
 </div>

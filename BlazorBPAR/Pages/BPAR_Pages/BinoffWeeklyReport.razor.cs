@@ -78,7 +78,7 @@ namespace BlazorBPAR.Pages.BPAR_Pages
                 },
                 GraphSettings = new graphSettings()
                 {
-                    Title = "Rolling Trend Data",
+                    title = "Rolling Trend Data",
                     vAxis = new vAxis() { viewWindow = new viewWindow() { min = "0" } }                   
                 }
             };

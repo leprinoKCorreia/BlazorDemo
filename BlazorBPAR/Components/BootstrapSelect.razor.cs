@@ -88,7 +88,6 @@ namespace BlazorBPAR.Components
 
         private void OnDataChange(ChangeEventArgs e, string key)
         {
-            //var SelectVal = string.Join(",", e.Value);
             if (e.Value is IEnumerable<string> values)
             {
                 string SelectVal = string.Join(",", values);

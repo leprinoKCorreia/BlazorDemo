@@ -14,7 +14,6 @@ namespace BlazorBPAR.Pages.BPAR_Pages
         [Inject] public IJSRuntime? JSRuntime { get; set; }
 
         public BootstrapSelectList? RefList { get; set; }
-
         private SelectOptions? PlantSelect;
         private SelectOptions? LineSelect;
         private SelectOptions? CookProgramSelect;
@@ -24,12 +23,8 @@ namespace BlazorBPAR.Pages.BPAR_Pages
         private SelectOptions? ProductCodeSelect;
         private List<SelectOptions>? selectList;
         private List<GraphOptions>? GraphOptions;
-
         public List<DynamicGraph> _refs = new();
-
         public DynamicGraph Ref { set => _refs.Add(value); }
-
-
 
         protected override void OnInitialized()
         {
@@ -101,9 +96,12 @@ namespace BlazorBPAR.Pages.BPAR_Pages
                     GraphElement = "demoGraph" + i,
                     GraphSettings = new graphSettings()
                     {
-                        Title = i + "",
-                        XAxisType = "number"
-                    }
+                        title = i + "",
+                        XAxisType = "number",
+                        focusTarget = "category"
+                    },
+                    Height = "100%",
+                    Width = "50%"
                 });
             }
         }

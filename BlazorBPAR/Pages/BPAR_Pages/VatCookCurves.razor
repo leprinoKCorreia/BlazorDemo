@@ -12,7 +12,7 @@
             <div style="float:right; width:183px">
                 <!--Main Menu button-->
                 <button class="vatCookCurveMainMenuButton">Main Menu</button>
-                <button class="vatCookCurveButton" @onclick="() => runGraph()">Weekly Yields (Test)</button>
+                <button class="vatCookCurveButton">Weekly Yields (Test)</button>
                 <button class="vatCookCurveButton">Daily Yields</button>
                 <button class="vatCookCurveButton">Probiotic Review</button>
                 <button class="vatCookCurveButton">Vat Protein Retention</button>
@@ -21,13 +21,21 @@
             </div>
         </div>
         <div style="float:right;width:100%">
-            <BootstrapSelectList selectOptions="@selectList" @ref="refList" />
+            <BootstrapSelectList SelectOptions="@selectList" @ref="RefList" />
         </div>
     </div>
     <div class="rightDIVBPAR">
         <BPARTitle title="Vat Cook Curves" />
         <div id="Graphs" class="graphHolderBPAR">
-            <DynamicGraph GraphOptions="@graph1" @ref="graph1Comp" />
+            @if(GraphOptions != null)
+            {
+                @foreach (var graph in GraphOptions)
+                {
+                    <DynamicGraph GraphOptions="@graph" @ref="Ref"/>
+                }
+            }
+            
+            
         </div>
     </div>
 </div>

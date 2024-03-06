@@ -11,21 +11,21 @@ namespace BlazorBPAR.Objects
 
 
         // Optional Fields
-        public List<string>? dependencies { get; set; }
+        public List<string>? Dependencies { get; set; }
 
-        public List<string>? options { get; set; }
+        public List<string>? Options { get; set; }
 
-        public int? dataMaxOptions { get; set; }
+        public int? DataMaxOptions { get; set; }
 
-        public string? defaultValue { get; set; }
+        public string? DefaultValue { get; set; }
 
-        public bool useQuery { get; set; } = true;
+        public bool UseQuery { get; set; } = true;
 
-        public string? query { get; set; }
+        public string? Query { get; set; }
 
-        public string? connection { get; set; }
+        public string? Connection { get; set; }
 
-        public List<string>? queryParams { get; set; }
+        public List<string>? QueryParams { get; set; }
     }
 
 }

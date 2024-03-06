@@ -16,99 +16,49 @@ namespace BlazorBPAR.Components
         [Inject] public IJSRuntime? JSRuntime { get; set; }
         public IList<Dictionary<string, object>>? queryResults;
 
-        protected override void OnInitialized()
-        {
-
-        }
-
-        public void runGraph()
+        public void RunGraph()
         {
             // Update query and confirm results exist
-            if (GraphOptions != null && GraphOptions.Query != null && GraphOptions.Connection != null)
+            if (GraphOptions?.Query == null || GraphOptions.Connection == null || GraphOptions.GraphSettings == null) return;
+
+            var queryToRun = GraphOptions.QueryParams?.Aggregate(GraphOptions.Query,
+                (current, param) => current.Replace($"${param}$", inputData.GetValue(param)?.ToString() ?? "")) ?? GraphOptions.Query;
+
+            queryResults = SQLQueryService.RunQuery(queryToRun, GraphOptions.Connection);
+
+            // read through unique columns to get the data and their datatypes
+            if (GraphOptions.GraphType == "LineChart" && queryResults.Any())
             {
-                string? queryToRun = "";
-                if (GraphOptions.queryParams != null)
+                GraphOptions.Columns = new List<cols>();
+                foreach (var row in queryResults)
                 {
-                    foreach (var param in GraphOptions.queryParams)
+                    foreach (var entry in row)
                     {
-                        if (inputData.GetValue(param) != null)
+                        if (entry.Value.ToString() != "")
                         {
-                            queryToRun = GraphOptions.Query.Replace("$" + param + "$", inputData.GetValue(param).ToString());
-                        }
-                        else
-                        {
-                            queryToRun = GraphOptions.Query.Replace("$" + param + "$", "");
-                        }
-                    }
-                }
-                else
-                {
-                    queryToRun = GraphOptions.Query;
-                }
-
-                queryResults = SQLQueryService.RunQuery(queryToRun, GraphOptions.Connection);
-
-                // read through unique columns to get the data and their datatypes
-                if (GraphOptions.GraphType == "LineChart" && queryResults.Count() > 0)
-                {
-                    GraphOptions.Columns = new List<cols>();
-                    float f = 0;
-                    Int64 intVal = 0;
-                    foreach (var row in queryResults)
-                    {
-                        foreach (var entry in row)
-                        {
-                            if(entry.Value.ToString() != "")
+                            cols newCol = new()
                             {
-                                cols newCol;
-                                if (entry.Key.ToString() == "XAxis")
-                                {
-                                    newCol = new cols { label = entry.Key.ToString(), type = "datetime" };
-                                }
-                                else
-                                {
-                                    if (float.TryParse(entry.Value.ToString(), out f) || Int64.TryParse(entry.Value.ToString(), out intVal))
-                                    {
-                                        newCol = new cols { label = entry.Key.ToString(), type = "number" };
-                                    }
-                                    else
-                                    {
-                                        newCol = new cols { label = entry.Key.ToString(), type = "string" };
-                                    }
-                                }
+                                label = entry.Key.ToString(),
+                                type = entry.Key.ToString() == "XAxis" ? GraphOptions.GraphSettings.XAxisType :
+                               float.TryParse(entry.Value.ToString(), out _) || Int64.TryParse(entry.Value.ToString(), out _) ? "number" : "string"
+                            };
 
-                                bool exists = GraphOptions.Columns.Exists(x => x.label == newCol.label && x.type == newCol.type);
-                                if (!exists)
-                                {
-                                    GraphOptions.Columns.Add(newCol);
-                                }
+                            bool exists = GraphOptions.Columns.Exists(x => x.label == newCol.label && x.type == newCol.type);
+                            if (!exists)
+                            {
+                                GraphOptions.Columns.Add(newCol);
                             }
                         }
                     }
-
-                    _ = rerunGraph();
                 }
+
+                _ = RerunGraph();
+
             }
         }
 
-        //protected override async Task OnAfterRenderAsync(bool firstRender)
-        //{
-        //    if (firstRender && JSRuntime != null && queryResults != null && GraphOptions != null) // only needs to be called once per page render
-        //    {
-        //        if(GraphOptions.GraphType == "LineChart" && GraphOptions.GraphElement != null)
-        //        {
-        //            await JSRuntime.InvokeVoidAsync("loadGraphService.loadLineGraph", GraphOptions.GraphElement, JsonConvert.SerializeObject(queryResults), JsonConvert.SerializeObject(GraphOptions.Columns), JsonConvert.SerializeObject(GraphOptions.GraphSettings));
-        //        }
-        //    }
-        //}     
-
-
-        public async Task rerunGraph()
+        public async Task RerunGraph()
         {
-            //if (GraphOptions != null && GraphOptions.Query != null && GraphOptions.Connection != null)
-            //{
-            //    queryResults = SQLQueryService.RunQuery(GraphOptions.Query, GraphOptions.Connection);
-            //}
             if (JSRuntime != null && GraphOptions != null && GraphOptions.GraphType == "LineChart" && GraphOptions.GraphElement != null)
             {
                 await JSRuntime.InvokeVoidAsync("loadGraphService.loadLineGraph", GraphOptions.GraphElement, JsonConvert.SerializeObject(queryResults), JsonConvert.SerializeObject(GraphOptions.Columns), JsonConvert.SerializeObject(GraphOptions.GraphSettings));

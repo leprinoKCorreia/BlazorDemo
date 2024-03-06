@@ -12,13 +12,15 @@
 
         public List<cols>? Columns { get; set; }
 
-        public graphSettings? GraphSettings { get; set; }
+        public graphSettings? GraphSettings { get; set; } = new graphSettings();  
 
-        public List<string>? queryParams { get; set; }
+        public List<string>? QueryParams { get; set; }
 
     }
+#pragma warning disable IDE1006 // Naming Styles
 
     public class cols
+
     {
         public string? label { get; set; }
         public string? type { get; set; }
@@ -33,6 +35,7 @@
         public string? width { get; set; } = "100%";
         public string? height { get; set; } = "100%";
         public vAxis? vAxis { get; set; } = new vAxis();
+        public string? XAxisType { get; set; } = "datetime";
     }
 
     public class series
@@ -62,6 +65,4 @@
         public bool? bold { get; set; } = false;
         public bool? italic { get; set; } = false;
     }
-
-
 }

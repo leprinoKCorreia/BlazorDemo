@@ -4,12 +4,12 @@
 @inject InputDataService inputData
 @inject IJSRuntime JS
 
-@if (selectOptions != null && selectOptions.Count() > 0)
+@if (SelectOptions != null && SelectOptions.Count() > 0)
 {
     <div>
-        @foreach (var select in selectOptions)
+        @foreach (var select in SelectOptions)
         {
-            <BootstrapSelect SelectOptions="select" @ref="@Ref" bootstrapSelects="@_refs" />
+            <BootstrapSelect SelectOptions="select" @ref="@Ref" BootstrapSelects="@_refs" />
         }
     </div>
 }

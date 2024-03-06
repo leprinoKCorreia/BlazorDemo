@@ -24,42 +24,42 @@ namespace BlazorBPAR.Pages.BPAR_Pages
         {
             plantSelect = new SelectOptions()
             {
-                options = new List<string>() { "All", "Allendale", "Lemoore East", "Lemoore West", "Roswell", "Tracy" },
+                Options = new List<string>() { "All", "Allendale", "Lemoore East", "Lemoore West", "Roswell", "Tracy" },
                 IDName = "PlantOptions",
-                useQuery = false,
+                UseQuery = false,
                 Label = "Plant"
             };
 
             fiscalYearSelect = new SelectOptions()
             {
-                options = new List<string>() { "2021", "2022", "2023", "2024" },
+                Options = new List<string>() { "2021", "2022", "2023", "2024" },
                 IDName = "FiscalYearOptions",
-                useQuery = false,
+                UseQuery = false,
                 Label = "Fiscal Year"
             };
 
             monthSelect = new SelectOptions()
             {
-                options = new List<string>() { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" },
+                Options = new List<string>() { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" },
                 IDName = "MonthOptions",
-                useQuery = false,
+                UseQuery = false,
                 Label = "Month"
             };
 
             FWKFYSelect = new SelectOptions()
             {
-                useQuery = true,
-                query = "select CONCAT( fw, ' | ',max(FiscalDate)) as [Option] from LIT.dbo.fiscalwktbl where FiscalYear = '2024' and FiscalDate <= (select CASE WHEN DATEPART(WEEKDAY, getdate()) <> 7 THEN DATEADD(DAY, 7 - DATEPART(WEEKDAY, getdate()), getdate()) ELSE getdate() end) group by fw order by fw desc",
-                connection = config.GetConnectionString("DEN_2012"),
+                UseQuery = true,
+                Query = "select CONCAT( fw, ' | ',max(FiscalDate)) as [Option] from LIT.dbo.fiscalwktbl where FiscalYear = '2024' and FiscalDate <= (select CASE WHEN DATEPART(WEEKDAY, getdate()) <> 7 THEN DATEADD(DAY, 7 - DATEPART(WEEKDAY, getdate()), getdate()) ELSE getdate() end) group by fw order by fw desc",
+                Connection = config.GetConnectionString("DEN_2012"),
                 IDName = "FWKFYOptions",
                 Label = "Fiscal Week/Year"
             };
 
             LineSelect = new SelectOptions()
             {
-                options = new List<string>() { "1", "2", "3", "4" },
+                Options = new List<string>() { "1", "2", "3", "4" },
                 IDName = "LineOptions",
-                useQuery = false,
+                UseQuery = false,
                 Label = "Line"
             };
 
@@ -73,8 +73,8 @@ namespace BlazorBPAR.Pages.BPAR_Pages
                 GraphElement = "demoGraph",
                 Columns = new List<cols>() 
                 { 
-                    new cols() { label = "ProductionDate", type = "datetime" }, 
-                    new cols() { label = "Rolling Average", type = "number" } 
+                    new() { label = "ProductionDate", type = "datetime" }, 
+                    new() { label = "Rolling Average", type = "number" } 
                 },
                 GraphSettings = new graphSettings()
                 {

@@ -14,7 +14,7 @@ namespace BlazorBPAR.Components
         [Parameter]
         public SelectOptions? SelectOptions { get; set; }
         [Parameter]
-        public List<BootstrapSelect>? bootstrapSelects { get; set; }
+        public List<BootstrapSelect>? BootstrapSelects { get; set; }
 
         [Inject] public IJSRuntime? JSRuntime { get; set; }
 
@@ -27,52 +27,52 @@ namespace BlazorBPAR.Components
             PopulateDropdown();
         }
 
-        public async void PopulateDropdown()
+        public void PopulateDropdown()
         {
             if (SelectOptions != null)
             {
-                if (SelectOptions.options == null || SelectOptions.options.Count() == 0)
+                if (SelectOptions.Options == null || SelectOptions.Options.Count == 0)
                 {
-                    if (SelectOptions.useQuery && SelectOptions.query != null && SelectOptions.connection != null)
+                    if (SelectOptions.UseQuery && SelectOptions.Query != null && SelectOptions.Connection != null)
                     {
                         string? queryToRun = "";
-                        if (SelectOptions.queryParams != null)
+                        if (SelectOptions.QueryParams != null)
                         {
-                            foreach (var param in SelectOptions.queryParams)
+                            foreach (var param in SelectOptions.QueryParams)
                             {
                                 if (inputData.GetValue(param) != null)
                                 {
-                                    queryToRun = SelectOptions.query.Replace("$" + param + "$", inputData.GetValue(param).ToString());
+                                    queryToRun = SelectOptions.Query.Replace("$" + param + "$", inputData.GetValue(param).ToString());
                                 }
                                 else
                                 {
-                                    queryToRun = SelectOptions.query.Replace("$" + param + "$", "");
+                                    queryToRun = SelectOptions.Query.Replace("$" + param + "$", "");
                                 }
                             }
                         }
                         else
                         {
-                            queryToRun = SelectOptions.query;
+                            queryToRun = SelectOptions.Query;
                         }
 
-                        SelectOptions.options = new List<string>();
-                        queryResults = SQLQueryService.RunQuery(queryToRun, SelectOptions.connection);
+                        SelectOptions.Options = new List<string>();
+                        queryResults = SQLQueryService.RunQuery(queryToRun, SelectOptions.Connection);
 
                         // Cycle through query results to get the values for the dropdown add to options list
                         foreach (var result in queryResults)
                         {
-                            SelectOptions.options.Add((string)result["Option"]);
+                            SelectOptions.Options.Add((string)result["Option"]);
                         }
 
                         StateHasChanged();
-                        
-                        refreshDropdown();
+
+                        RefreshDropdown();
                     }
                 }
             }
         }
 
-        public async void refreshDropdown()
+        public async void RefreshDropdown()
         {
             if (JSRuntime != null && isntFirstRun && SelectOptions != null)
             {
@@ -86,33 +86,33 @@ namespace BlazorBPAR.Components
             }
         }
 
-        private async Task OnDataChange(ChangeEventArgs e, string key)
+        private void OnDataChange(ChangeEventArgs e, string key)
         {
             //var SelectVal = string.Join(",", e.Value);
-            if(e.Value is IEnumerable<string> values)
+            if (e.Value is IEnumerable<string> values)
             {
                 string SelectVal = string.Join(",", values);
                 inputData.SetValue(key, value: SelectVal);
-                
-                if (SelectOptions != null && SelectOptions.dependencies != null && bootstrapSelects != null)
+
+                if (SelectOptions != null && SelectOptions.Dependencies != null && BootstrapSelects != null)
                 {
-                    foreach (var dependency in SelectOptions.dependencies)
+                    foreach (var dependency in SelectOptions.Dependencies)
                     {
-                        foreach (var select in bootstrapSelects)
+                        foreach (var select in BootstrapSelects)
                         {
                             if (select.SelectOptions != null && dependency == select.SelectOptions.IDName)
                             {
-                                select.SelectOptions.options = new List<string>();
+                                select.SelectOptions.Options = new List<string>();
                                 select.isntFirstRun = true;
                                 select.PopulateDropdown();
                             }
                         }
                     }
                 }
-            }               
+            }
         }
 
-        public string returnFalseIfNull(int? value)
+        public string ReturnFalseIfNull(int? value)
         {
             return value.HasValue ? value.Value.ToString() : "false";
         }

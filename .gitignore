@@ -4,10 +4,7 @@
 
 .vs/
 
-obj/
 
-bin/
+BlazorBPAR/bin
 
-BlazorBPAR/.vs/
-
-BlazorBPAR/bin/Debug/net6.0/
+BlazorBPAR/obj

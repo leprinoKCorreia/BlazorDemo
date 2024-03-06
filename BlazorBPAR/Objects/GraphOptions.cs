@@ -19,7 +19,6 @@
         public string? Width { get; set; } = "100%";
         public string? Height { get; set; } = "100%";
 
-
     }
     
     #pragma warning disable IDE1006 // Naming Styles convention ignored for javascript library

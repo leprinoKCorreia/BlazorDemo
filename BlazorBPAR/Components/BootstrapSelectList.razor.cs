@@ -19,12 +19,11 @@ namespace BlazorBPAR.Components
 
         public BootstrapSelect Ref { set => _refs.Add(value); }
 
-
         public async Task InitDefaultValues()
         {
             foreach (var select in _refs)
             {
-                if (select != null && select.SelectOptions != null && select.SelectOptions.DefaultValue != null && select.SelectOptions.Dependencies != null && JSRuntime != null && select.SelectOptions.IDName != null)
+                if (select != null && select.SelectOptions != null && select.SelectOptions.DefaultValue != null && JSRuntime != null && select.SelectOptions.IDName != null)
                 {
                     await Task.Delay(1); // DO NOT EVER MOVE THIS. I DONT KNOW WHY BUT THIS WONT WORK UNLESS WE DELAY A MILISECOND
                     string js = "$('#" + select.SelectOptions.IDName + "').selectpicker('val', '" + select.SelectOptions.DefaultValue + "');";
@@ -34,23 +33,23 @@ namespace BlazorBPAR.Components
                     await JSRuntime.InvokeVoidAsync("eval", js);
 
                     inputData.SetValue(select.SelectOptions.IDName, value: select.SelectOptions.DefaultValue);
-
-                    foreach (var dependency in select.SelectOptions.Dependencies)
+                    if(select.SelectOptions.Dependencies != null)
                     {
-                        foreach (var selectToRefresh in _refs)
+                        foreach (var dependency in select.SelectOptions.Dependencies)
                         {
-                            if (selectToRefresh.SelectOptions != null && dependency == selectToRefresh.SelectOptions.IDName)
+                            foreach (var selectToRefresh in _refs)
                             {
-                                selectToRefresh.SelectOptions.Options = new List<string>();
-                                selectToRefresh.isntFirstRun = true;
-                                selectToRefresh.PopulateDropdown();
+                                if (selectToRefresh.SelectOptions != null && dependency == selectToRefresh.SelectOptions.IDName)
+                                {
+                                    selectToRefresh.SelectOptions.Options = new List<string>();
+                                    selectToRefresh.isntFirstRun = true;
+                                    selectToRefresh.PopulateDropdown();
+                                }
                             }
                         }
-                    }
+                    }                 
                 }
             }
         }
-
-
     }
 }

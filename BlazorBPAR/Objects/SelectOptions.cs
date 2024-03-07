@@ -26,6 +26,11 @@ namespace BlazorBPAR.Objects
         public string? Connection { get; set; }
 
         public List<string>? QueryParams { get; set; }
+
+        public bool ProvideOptionValues { get; set; } = false;
+
+        public Dictionary<string,string>? OptionValues { get; set; }
+
     }
 
 }

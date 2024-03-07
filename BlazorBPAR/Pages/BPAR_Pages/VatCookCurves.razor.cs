@@ -30,16 +30,17 @@ namespace BlazorBPAR.Pages.BPAR_Pages
         {
             PlantSelect = new SelectOptions()
             {
-                Options = new List<string>() { "Allendale","Fort Morgan", "Greeley", "Lemoore East", "Lemoore West", "Roswell", "Tracy", "Waverly" },
+                OptionValues = new Dictionary<string, string> {{ "Allendale", "ALN" }, { "Fort Morgan", "FTM" }, { "Greeley", "GRE" },
+                    { "Lemoore East", "LEM" }, { "Lemoore West", "LEW" }, { "Roswell", "ROS" }, { "Tracy", "TRA" }, {"Waverly", "WAV" } },
                 IDName = "PlantOptions",
                 UseQuery = false,
                 Label = "Plant",
-                DefaultValue = "Greeley"
+                DefaultValue = "GRE"
             };
 
             LineSelect = new SelectOptions()
             {
-                Options = new List<string>() { "1", "2", "3"},
+                Options = new List<string>() { "1", "2", "3" },
                 IDName = "LineOptions",
                 UseQuery = false,
                 Label = "Line Number",
@@ -114,12 +115,12 @@ namespace BlazorBPAR.Pages.BPAR_Pages
 
                 await RefList.InitDefaultValues();
 
-                foreach(var graph in _refs)
+                foreach (var graph in _refs)
                 {
                     graph.RunGraph();
                 }
 
             }
-        }       
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace BlazorBPAR.Pages
 
         public IList<Dictionary<string, object>>? queryResults;
         public string? Theme { get; set; } = "dark-theme";
-
+        public GridOptions? exampleGrid {  get; set; }
 
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -26,6 +26,13 @@ namespace BlazorBPAR.Pages
         {
             var queryToRun = "SELECT * FROM LPSDB.dbo.ChecklistTasksConfig";
             queryResults = SQLQueryService.RunQuery(queryToRun, config.GetConnectionString("ROS_LIT"));
+
+            exampleGrid = new GridOptions() { 
+                Columns = new List<GridCols>() { 
+                    new GridCols { ColumnName = "line", Sortable = false } 
+                } 
+            };
+
         }
 
         public void openPage(string page)

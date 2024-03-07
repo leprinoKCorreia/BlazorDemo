@@ -21,7 +21,8 @@
             }
 
     </style>
-} else
+}
+else
 {
     <style>
 
@@ -67,14 +68,44 @@
         <Columns>
             @foreach (var column in columns)
             {
-                <RadzenDataGridColumn TItem="IDictionary<string, object>"
-                                      Title="@column.Key"
-                                      Type="column.Value"
-                                      Property="@GetColumnPropertyExpression(column.Key, column.Value)">
-                    <Template>
-                        @context[@column.Key]
-                    </Template>
-                </RadzenDataGridColumn>
+                if(GridOptions.Columns != null)
+                {
+                    var gridCol = GridOptions.Columns.FirstOrDefault(c => c.ColumnName.Equals(column.Key, StringComparison.OrdinalIgnoreCase));
+                    if(gridCol != null)
+                    {
+                        <RadzenDataGridColumn TItem="IDictionary<string, object>"
+                                              Title="@column.Key"
+                                              Type="@column.Value"
+                                              Property="@GetColumnPropertyExpression(column.Key, column.Value)"
+                                              Sortable="@gridCol.Sortable"
+                                              Groupable="@gridCol.Groupable"
+                                              Filterable="@gridCol.Filterable">
+                            <Template>
+                                @context[@column.Key]
+                            </Template>
+                        </RadzenDataGridColumn>
+                    } else
+                    {
+                        <RadzenDataGridColumn TItem="IDictionary<string, object>"
+                                              Title="@column.Key"
+                                              Type="@column.Value"
+                                              Property="@GetColumnPropertyExpression(column.Key, column.Value)">
+                            <Template>
+                                @context[@column.Key]
+                            </Template>
+                        </RadzenDataGridColumn>
+                    }
+                } else
+                {
+                    <RadzenDataGridColumn TItem="IDictionary<string, object>"
+                                          Title="@column.Key"
+                                          Type="column.Value"
+                                          Property="@GetColumnPropertyExpression(column.Key, column.Value)">
+                        <Template>
+                            @context[@column.Key]
+                        </Template>
+                    </RadzenDataGridColumn>
+                }
             }
         </Columns>
     </RadzenDataGrid>

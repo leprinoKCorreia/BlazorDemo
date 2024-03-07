@@ -21,15 +21,28 @@
             }
         </style>
         <label class="selectLabel">@SelectOptions.Label</label>
-        @if (SelectOptions.Options != null && SelectOptions.IDName != null)
+        @if (SelectOptions.IDName != null)
         {
-            <select id="@SelectOptions.IDName" class="selectpicker" data-max-options="@ReturnFalseIfNull(SelectOptions.DataMaxOptions)" multiple data-dropup-auto="false" @onchange="(e) => OnDataChange(e,SelectOptions.IDName)">
-                @foreach (var option in SelectOptions.Options)
-                {
-                    <option value="@option">@option</option>
-                }
-            </select>
-        }
+            @if (SelectOptions.Options != null)
+            {
+                <select id="@SelectOptions.IDName" class="selectpicker" data-max-options="@ReturnFalseIfNull(SelectOptions.DataMaxOptions)" multiple data-dropup-auto="false" @onchange="(e) => OnDataChange(e,SelectOptions.IDName)">
+                    @foreach (var option in SelectOptions.Options)
+                    {
+                        <option value="@option">@option</option>
+                    }
+                </select>
+            }
+            @if (SelectOptions.Options == null && SelectOptions.OptionValues != null)
+            {
+                <select id="@SelectOptions.IDName" class="selectpicker" data-max-options="@ReturnFalseIfNull(SelectOptions.DataMaxOptions)" multiple data-dropup-auto="false" @onchange="(e) => OnDataChange(e,SelectOptions.IDName)">
+                    @foreach (var option in SelectOptions.OptionValues)
+                    {
+                        <option value="@option.Value">@option.Key</option>
+                    }
+                </select>
+
+            }
+        }   
     </div>
 }
 

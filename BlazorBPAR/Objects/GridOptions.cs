@@ -24,16 +24,17 @@ namespace BlazorBPAR.Objects
         public bool AllowVirtualization { get; set; } = true;
 
         public string Height { get; set; } = "400px";
+
+        public List<GridCols>? Columns { get; set; }
+
     }
 
     public class GridCols
     {
         // Column Specfic
-        public string? SortProperty { get; set; }
-        public bool Sortable { get; set; } = false;
-        public string? FilterProperty { get; set; }
-        public bool Filterable { get; set; } = false;
-        public string? GroupProperty { get; set; }
+        public string ColumnName { get; set; } = string.Empty;
+        public bool Sortable { get; set; } = true;
+        public bool Filterable { get; set; } = true;
         public bool Groupable { get; set; } = true;
     }
 

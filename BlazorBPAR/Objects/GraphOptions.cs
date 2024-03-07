@@ -48,7 +48,7 @@
         public string? orientation { get; set; } // changes orientation of axes. Default is horizontal, vertical will swap x and y axes
         public string? pointShape { get; set; } // Shape of points. Options: 'circle', 'triangle', 'square', 'diamond', 'star', 'polygon'
         public int? pointSize { get; set; } // default size of points for all series. Options: 0 and positive ints
-        public bool? pointsVisible { get; set; } = true; // should the graph show points at each data entry. Options: true, false
+        public bool? pointsVisible { get; set; } = false; // should the graph show points at each data entry. Options: true, false
         public string? selectionMode { get; set; } // Can the user select multiple points. Options: 'single', 'multiple'
         public List<series>? series { get; set; }
         public string? title { get; set; }

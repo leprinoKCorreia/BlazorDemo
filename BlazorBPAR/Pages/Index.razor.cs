@@ -10,6 +10,8 @@ namespace BlazorBPAR.Pages
         [Inject] public IJSRuntime? JSRuntime { get; set; }
 
         public IList<Dictionary<string, object>>? queryResults;
+        public string? Theme { get; set; } = "dark-theme";
+
 
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -30,5 +32,17 @@ namespace BlazorBPAR.Pages
         {
             @nav.NavigateTo(page);
         }
+
+        public void ChangeTheme()
+        {
+            if(Theme == "dark-theme")
+            {
+                Theme = "light-theme";
+            } else
+            {
+                Theme = "dark-theme";
+            }
+        }
+
     }
 }

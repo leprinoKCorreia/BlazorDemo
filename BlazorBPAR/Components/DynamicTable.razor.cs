@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using BlazorBPAR.Objects;
+using Microsoft.AspNetCore.Components;
 using Radzen;
 
 namespace BlazorBPAR.Components
@@ -10,7 +11,8 @@ namespace BlazorBPAR.Components
         public IEnumerable<IDictionary<string, object>>? data { get; set; }
         [Parameter]
         public string TableCssClass { get; set; } = string.Empty;
-
+        [Parameter]
+        public GridOptions? GridOptions { get; set; }
 
         // other important features
         public IDictionary<string, Type>? columns { get; set; }

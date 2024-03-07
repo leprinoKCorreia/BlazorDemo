@@ -32,6 +32,7 @@
 
     public class graphSettings
     {
+        // Documentation https://developers.google.com/chart/interactive/docs/gallery/linechart#configuration-options
         public string? aggregationTarget { get; set; } = "none"; // Multiple Selections. Options: 'none', 'auto', 'series', or 'category'
         public string? axisTitlesPosition { get; set; } = "out"; // Location of Titles on Axis. Options: 'in', 'out', 'none'
         public string? backgroundColor { get; set; } = "white"; // Color of whole Graph. Options: color name or Hex value
@@ -44,8 +45,15 @@
         public bool? interpolateNulls { get; set; } = true;  // Options: true, false
         public graphLegend? legend { get; set; } // controls options for legend. Options: graphLegend object
         public string? lineWidth { get; set; } // all series will follow this unless they are specified. Options: int
+        public string? orientation { get; set; } // changes orientation of axes. Default is horizontal, vertical will swap x and y axes
+        public string? pointShape { get; set; } // Shape of points. Options: 'circle', 'triangle', 'square', 'diamond', 'star', 'polygon'
+        public int? pointSize { get; set; } // default size of points for all series. Options: 0 and positive ints
+        public bool? pointsVisible { get; set; } = true; // should the graph show points at each data entry. Options: true, false
+        public string? selectionMode { get; set; } // Can the user select multiple points. Options: 'single', 'multiple'
         public List<series>? series { get; set; }
         public string? title { get; set; }
+        public string? titlePosition { get; set; } // Where does the chart title go. Options: 'in', 'out', 'none'
+        public textStyle? titleTextStyle { get; set; } // Style of graph title. Options: textStyle object
         public GraphAxis? vAxis { get; set; } = new GraphAxis();
         public string? XAxisType { get; set; } = "datetime";
     }

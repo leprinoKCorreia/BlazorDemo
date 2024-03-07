@@ -1,22 +1,75 @@
-﻿@if (data != null && columns != null)
+﻿@if (TableCssClass == "dark-theme")
+{
+    <style>
+
+        .rz-sortable-column {
+            background-color: #242526;
+            overflow: visible;
+            white-space: pre-wrap;
+        }
+
+        .rz-grid-table td {
+            background-color: #242526 !important;
+            color: #E4E6EB !important;
+        }
+
+            .rz-grid-table td .rz-cell-data {
+                overflow: visible;
+                white-space: pre-wrap;
+                background-color: #242526;
+                color: #E4E6EB;
+            }
+
+    </style>
+} else
+{
+    <style>
+
+        .rz-sortable-column {
+            background-color: #242526;
+            overflow: visible;
+            white-space: pre-wrap;
+        }
+
+        .rz-grid-table td {
+            background-color: #FFFFFF;
+            color: #333;
+        }
+
+            .rz-grid-table td .rz-cell-data {
+                overflow: visible;
+                white-space: pre-wrap;
+                background-color: #FFFFFF;
+                color: #333;
+            }
+
+    </style>
+}
+
+@if (GridOptions != null && data != null && columns != null)
 {
     <RadzenDataGrid @bind-Value=@selectedItems
-                    Data="@data"
-                    AllowVirtualization="true"
-                    AllowColumnResize="true"
-                    AllowPaging="false"
-                    TItem="IDictionary<string, object>"
-                    AllowFiltering="true"
+                    Data="data"
+                    AllowSorting="GridOptions.AllowSorting"
+                    AllowMultiColumnSorting="GridOptions.AllowMultiColumnSorting"
+                    ShowMultiColumnSortingIndex="true"
+                    AllowPaging="GridOptions.AllowPaging"
+                    AllowFiltering="GridOptions.AllowFiltering"
                     FilterPopupRenderMode="PopupRenderMode.OnDemand"
                     FilterMode="FilterMode.Advanced"
-                    AllowSorting="true"
-                    AllowMultiColumnSorting="true"
-                    ShowMultiColumnSortingIndex="true"
-                    Style="height:400px;">
+                    FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                    AllowGrouping="GridOptions.AllowGrouping"
+                    AllowColumnResize="GridOptions.AllowColumnResize"
+                    AllowColumnReorder="GridOptions.AllowColumnReorder"
+                    AllowVirtualization="GridOptions.AllowVirtualization"
+                    TItem="IDictionary<string, object>"
+                    Style="height: 400px;">
         <Columns>
             @foreach (var column in columns)
             {
-                <RadzenDataGridColumn TItem="IDictionary<string, object>" Title="@column.Key" Type="column.Value"
+                <RadzenDataGridColumn TItem="IDictionary<string, object>"
+                                      Title="@column.Key"
+                                      Type="column.Value"
                                       Property="@GetColumnPropertyExpression(column.Key, column.Value)">
                     <Template>
                         @context[@column.Key]

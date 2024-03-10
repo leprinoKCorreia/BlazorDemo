@@ -23,6 +23,7 @@
         <label class="selectLabel">@SelectOptions.Label</label>
         @if (SelectOptions.IDName != null)
         {
+            // If Options are populated either manually or by query, display those
             @if (SelectOptions.Options != null)
             {
                 <select id="@SelectOptions.IDName" class="selectpicker" data-max-options="@ReturnFalseIfNull(SelectOptions.DataMaxOptions)" multiple data-dropup-auto="false" @onchange="(e) => OnDataChange(e,SelectOptions.IDName)">
@@ -32,6 +33,7 @@
                     }
                 </select>
             }
+            // If options is a list of values and separate options names display this
             @if (SelectOptions.Options == null && SelectOptions.OptionValues != null)
             {
                 <select id="@SelectOptions.IDName" class="selectpicker" data-max-options="@ReturnFalseIfNull(SelectOptions.DataMaxOptions)" multiple data-dropup-auto="false" @onchange="(e) => OnDataChange(e,SelectOptions.IDName)">

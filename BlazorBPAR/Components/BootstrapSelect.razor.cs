@@ -95,6 +95,7 @@ namespace BlazorBPAR.Components
 
                 if (SelectOptions != null && SelectOptions.Dependencies != null && BootstrapSelects != null)
                 {
+                    // Process Regular Dependencies
                     foreach (var dependency in SelectOptions.Dependencies)
                     {
                         foreach (var select in BootstrapSelects)
@@ -104,6 +105,25 @@ namespace BlazorBPAR.Components
                                 select.SelectOptions.Options = new List<string>();
                                 select.isntFirstRun = true;
                                 select.PopulateDropdown();
+                            }
+                        }
+                    }
+                    // Process Fixed Dependencies
+                    if(SelectOptions.FixedDependencies != null)
+                    {
+                        foreach(var dependency in SelectOptions.FixedDependencies)
+                        {
+                            foreach (var select in BootstrapSelects)
+                            {
+                                // Case when they passed in List of options
+                                if (select.SelectOptions?.IDName == dependency.Key && dependency.Value.GetType() == new List<string>().GetType())
+                                {
+                                    // TODO - Implement way to read list of strings and create options
+                                }
+                                else // Case when they passed in Dict of Options and values
+                                {
+                                    // TODO - implement way to read dict of <string,string> to get values for dropdown
+                                }
                             }
                         }
                     }

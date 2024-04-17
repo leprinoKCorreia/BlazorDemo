@@ -9,13 +9,13 @@
 <div style="background-color: rgba(76,71,150,255); overflow: auto; height: 100%; width: 100%; position: relative;">
     <div class="sidebarLeftBPAR">
         <div style="float:right;width:100%">
-            <BootstrapSelectList SelectOptions="@selectList" />
+            <BootstrapSelectList SelectOptions="@selectList" @ref="RefList" />
         </div>
     </div>
     <div class="rightDIVBPAR">
         <BPARTitle title="Binoff Weekly Report" />
         <div id="Graphs" class="graphHolderBPAR">
-            <DynamicGraph GraphOptions="@rollingGraph" />
+            <DynamicGraph GraphOptions="@rollingGraph" @ref="Ref" />
         </div>
     </div>
 </div>

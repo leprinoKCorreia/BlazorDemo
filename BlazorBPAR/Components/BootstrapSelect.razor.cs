@@ -2,6 +2,7 @@
 using BlazorBPAR.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.JSInterop;
 using System;
 using System.ComponentModel;
@@ -80,7 +81,7 @@ namespace BlazorBPAR.Components
                 string js = "$('#" + SelectOptions.IDName + "').selectpicker('refresh');";
                 await JSRuntime.InvokeVoidAsync("eval", js);
                 await Task.Delay(1); // DO NOT EVER MOVE THIS. I DONT KNOW WHY BUT THIS WONT WORK UNLESS WE DELAY A MILISECOND
-                js = "$('#" + SelectOptions.IDName + "').selectpicker('selectAll');";
+                js = "$('#" + SelectOptions.IDName + "').selectpicker('selectAll');"; // TODO - Update this to take in a param
                 await JSRuntime.InvokeVoidAsync("eval", js);
                 isntFirstRun = false;
             }
@@ -108,23 +109,32 @@ namespace BlazorBPAR.Components
                             }
                         }
                     }
-                    // Process Fixed Dependencies
-                    if(SelectOptions.FixedDependencies != null)
+                }
+                // Process Fixed Dependencies
+                if (SelectOptions != null && BootstrapSelects != null && SelectOptions.FixedDependencies != null)
+                {
+                    foreach (var select in BootstrapSelects)
                     {
-                        foreach(var dependency in SelectOptions.FixedDependencies)
+                        var optionsToUse = SelectOptions.FixedDependencies.FirstOrDefault(c => c.Dropdown.Equals(select.SelectOptions?.IDName, StringComparison.OrdinalIgnoreCase));
+                        if (optionsToUse != null && optionsToUse.Options != null && select.SelectOptions != null)
                         {
-                            foreach (var select in BootstrapSelects)
+                            if (optionsToUse.Options.ContainsKey(SelectVal))
                             {
-                                // Case when they passed in List of options
-                                if (select.SelectOptions?.IDName == dependency.Key && dependency.Value.GetType() == new List<string>().GetType())
-                                {
-                                    // TODO - Implement way to read list of strings and create options
-                                }
-                                else // Case when they passed in Dict of Options and values
-                                {
-                                    // TODO - implement way to read dict of <string,string> to get values for dropdown
-                                }
+                                select.SelectOptions.Options = optionsToUse.Options[SelectVal];
+                                select.StateHasChanged();
+                                select.isntFirstRun = true;
+                                select.RefreshDropdown();
                             }
+                        } else if (optionsToUse != null && optionsToUse.OptionValues != null && select.SelectOptions != null)
+                        {
+                            if (optionsToUse.OptionValues.ContainsKey(SelectVal))
+                            {
+                                select.SelectOptions.OptionValues = optionsToUse.OptionValues[SelectVal];
+                                select.StateHasChanged();
+                                select.isntFirstRun = true;
+                                select.RefreshDropdown();
+                            }
+                            
                         }
                     }
                 }

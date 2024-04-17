@@ -30,12 +30,21 @@ namespace BlazorBPAR.Pages.BPAR_Pages
         {
             PlantSelect = new SelectOptions()
             {
-                OptionValues = new Dictionary<string, string> {{ "Allendale", "ALN" }, { "Fort Morgan", "FTM" }, { "Greeley", "GRE" },
-                    { "Lemoore East", "LEM" }, { "Lemoore West", "LEW" }, { "Roswell", "ROS" }, { "Tracy", "TRA" }, {"Waverly", "WAV" } },
+                OptionValues = new Dictionary<string, string> { { "Allendale", "ALN" }, { "Fort Morgan", "FTM" }, { "Greeley", "GRE" },
+                    { "Lemoore East", "LEM" }, { "Lemoore West", "LEW" }, { "Roswell", "ROS" }, { "Tracy", "TRA" }, { "Waverly", "WAV" } },
                 IDName = "PlantOptions",
                 UseQuery = false,
                 Label = "Plant",
-                DefaultValue = "GRE"
+                DefaultValue = "GRE",
+                FixedDependencies = new()
+                {
+                    new() {
+                        Dropdown = "LineOptions", Options = new() {
+                            { "GRE", new() { "1" } },
+                            { "ALN", new() { "1","2" } }
+                        }
+                    }
+                }
             };
 
             LineSelect = new SelectOptions()

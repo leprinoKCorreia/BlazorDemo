@@ -31,10 +31,15 @@ namespace BlazorBPAR.Objects
 
         public Dictionary<string,string>? OptionValues { get; set; }
 
-        // Takes in a string (the option) and an object which contains the dropdown name and what to set it to.
-        // EX: [Key: Greeley, Value: Object("LineSelect",Dictionary<string, string> optionValues or List<string> options)]
-        public Dictionary<string,object>? FixedDependencies { get; set; } 
+        public List<FixedSelectDependency>? FixedDependencies { get; set; }
 
+    }
+
+    public class FixedSelectDependency
+    {
+        public string Dropdown { get; set; } = "";
+        public Dictionary<string, List<string>>? Options { get; set; }
+        public Dictionary<string, Dictionary<string, string>>? OptionValues { get; set; }
     }
 
 }

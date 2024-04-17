@@ -4,6 +4,7 @@ using Microsoft.JSInterop;
 using BlazorBPAR.Objects;
 using System.Data;
 using Microsoft.Extensions.Configuration;
+using BlazorBPAR.Components;
 
 namespace BlazorBPAR.Pages.BPAR_Pages
 {
@@ -17,8 +18,14 @@ namespace BlazorBPAR.Pages.BPAR_Pages
         private SelectOptions? monthSelect;
         private SelectOptions? FWKFYSelect;
         private SelectOptions? LineSelect;
+        private SelectOptions? PlannedBinoffSelect;
         private List<SelectOptions>? selectList;
         private GraphOptions? rollingGraph;
+
+        public BootstrapSelectList? RefList { get; set; }
+
+        public List<DynamicGraph> _refs = new();
+        public DynamicGraph Ref { set => _refs.Add(value); }
 
         protected override void OnInitialized()
         {
@@ -27,7 +34,8 @@ namespace BlazorBPAR.Pages.BPAR_Pages
                 Options = new List<string>() { "All", "Allendale", "Lemoore East", "Lemoore West", "Roswell", "Tracy" },
                 IDName = "PlantOptions",
                 UseQuery = false,
-                Label = "Plant"
+                Label = "Plant",
+                DefaultValue = "All"
             };
 
             fiscalYearSelect = new SelectOptions()
@@ -35,7 +43,8 @@ namespace BlazorBPAR.Pages.BPAR_Pages
                 Options = new List<string>() { "2021", "2022", "2023", "2024" },
                 IDName = "FiscalYearOptions",
                 UseQuery = false,
-                Label = "Fiscal Year"
+                Label = "Fiscal Year",
+                DefaultValue = "2024"
             };
 
             monthSelect = new SelectOptions()
@@ -60,10 +69,20 @@ namespace BlazorBPAR.Pages.BPAR_Pages
                 Options = new List<string>() { "1", "2", "3", "4" },
                 IDName = "LineOptions",
                 UseQuery = false,
-                Label = "Line"
+                Label = "Line",
+                DefaultValue = "1"
             };
 
-            selectList = new List<SelectOptions> { plantSelect, fiscalYearSelect, monthSelect, FWKFYSelect, LineSelect };
+            PlannedBinoffSelect = new SelectOptions()
+            {
+                Options = new List<string>() { "Yes", "No" },
+                IDName = "PlannedBinoffOptions",
+                UseQuery = false,
+                Label = "Include Planned Binoff?",
+                DefaultValue = "Yes"
+            };
+
+            selectList = new List<SelectOptions> { plantSelect, fiscalYearSelect, monthSelect, FWKFYSelect, LineSelect, PlannedBinoffSelect };
 
             rollingGraph = new GraphOptions()
             {
@@ -87,9 +106,17 @@ namespace BlazorBPAR.Pages.BPAR_Pages
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            if (firstRender && JSRuntime != null) // only needs to be called once per page render
+            if (firstRender && JSRuntime != null && RefList != null) // only needs to be called once per page render
             {
                 await JSRuntime.InvokeVoidAsync("selectPickerService.init");
+
+                await RefList.InitDefaultValues();
+
+                foreach (var graph in _refs)
+                {
+                    graph.RunGraph();
+                }
+
             }
         }
     }
